@@ -1,5 +1,4 @@
 [void] [System.Reflection.Assembly]::LoadWithPartialName("System.Windows.Forms")
-
 $ProgressPreference = 'SilentlyContinue'
 
 #Custom Icon
@@ -206,7 +205,7 @@ $form.Controls.Add($container2)
 
 function runthingy {
     #Internet Speed Test
-    $Exist = Get-Item "$env:TEMP\speedtest.exe"
+    $Exist = Get-Item "$env:TEMP\speedtest.exe" -ErrorAction SilentlyContinue
     if (!($Exist)) {
         #Download File Settings
         $SpeedTestInstaller = "SpeedTest.zip"
